@@ -1,0 +1,28 @@
+name: compile
+on: push
+jobs:
+  greeting:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello, you are running on `uname --all`"
+
+  thesis:
+    needs: greeting
+    runs-on: ubuntu-latest
+    container: siewyanhoh/latex_ubuntu:texlivefull
+    steps:
+      - name: checkout repository
+        uses: actions/checkout@v2
+
+      - name: clean up cache 
+        run: |
+          make clean
+
+      - name: build english latex pdf with docker
+        run: |
+          make VER=english
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: Thesis_compiled.pdf
+          path: Thesis.pdf
