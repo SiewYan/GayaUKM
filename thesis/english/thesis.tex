@@ -1,7 +1,8 @@
 %% Example GayaUKM thesis in English
-\documentclass[english,nohyphen]{GayaUKM}
+\documentclass[english,nohyphen]{../../packages/GayaUKM}
 
 \usepackage{graphicx}
+\graphicspath{{../../figures/}}
 \usepackage{longtable} %% If your list of symbols, abbreviations is longer than a page and you want to use a longtable for it
 
 %% Your metadata. Note that an English thesis needs a Malay title page as well,
@@ -29,7 +30,7 @@
 %% Generate the English and Malay title pages.
 %% Re-specify your title with different manual line breaks for the English
 %% title page, if necessary
-\title{<Your Thesis Title, Manually Break the Lines into a Nice Reverse Pyramid if Necessary>}
+\title{<YYour Thesis Title, Manually Break the Lines into a Nice Reverse Pyramid if Necessary>}
 \maketitlepage
 
 %%%% If you're happy to just use the same line-breaking scheme for the English
@@ -59,14 +60,14 @@
 
 \mainmatter
 % Each chapter from a separate file
-\input{chap-intro}
-\input{chap-fibonacci}
-\input{chap-goldenratio}
+\input{chapter1}
+\input{chapter2}
+\input{chapter3}
 
 
 
 % references are listed in refs.bib
-\bibliography{refs}
+\bibliography{references}
 
 \appendix
 % Each appendix chapter from a separate file
