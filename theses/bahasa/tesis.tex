@@ -1,16 +1,16 @@
 %% Contoh tesis GayaUKM dalam Bahasa Melayu
 \documentclass[bahasam,nohyphen]{../../packages/GayaUKM}
+\usepackage{../../packages/common}
+\input{../../metaData}
 
-\usepackage{graphicx}
-\graphicspath{{../../figures/}}
-\title{<Tajuk Tesis Anda, Pecahkan Tajuk Panjang Secara Manual\protect\\Jika Perlu>}
-\author{<Nama Anda>}
-\authorid{<P00000>}
-\faculty{<Fakulti Anda>}
-\submissiondate{2 Oktober 2013}
-\submissionyear{2013}
-\degreetype{Doktor Falsafah}
-\campus{Bangi}
+\title{\mytitlems}
+\author{\myauthor}
+\authorid{\myauthorid}
+\faculty{\myfacultyms}
+\submissiondate{\mysubmissiondate}
+\submissionyear{\mysubmissionyear}
+\degreetype{\mydegreetype}
+\campus{Bangi} %% Assuming Malaysian cities are spelt the same way in English and Malay   
 
 %% If you find the boxes around hyperlinks distracting
 \hypersetup{colorlinks,allcolors=black}
@@ -22,7 +22,7 @@
 
 %% Re-specify your title with different manual line breaks for the
 %% title page, if necessary
-\title{<Tajuk Tesis Anda, Pecahkan Tajuk Panjang\protect\\Secara Manual Jika Perlu>}
+\title{\mytitlems}
 \maketitlepage
 
 \frontmatter
@@ -32,10 +32,10 @@
 \input{penghargaan}
 
 % abstrak dlm Bahasa Melayu dari abstrak-ms.tex
-\input{abstrak-ms}
+\input{../../abstracts/abstrak-ms}
 
 % abstrak dlm Bahasa Inggeris dari abstract-en.tex
-\input{abstract-en}
+\input{../../abstracts/abstract-en}
 
 
 \tableofcontents\clearpage
@@ -44,21 +44,22 @@
 
 % Senari simbol dll boleh disediakan seperti
 % dalam senaraisimbol.tex
-\input{senaraisimbol}
+\input{../../supplements/symbols}
 
 
 \mainmatter
 % Setiap satu bab dari fail berasingan
-\input{bab-pengenalan}
-\input{bab-latarbelakang}
-\input{bab-fibonacci}
-\input{bab-goldenratio}
+\input{bab-1}
+\input{bab-2}
+\input{bab-3}
+\input{bab-4}
 
 % rujukan tersenarai dlm refs.bib
-\bibliography{refs}
+\bibliography{../references}
 
 \appendix
 % Setiap satu bab apendiks dari fail berasingan
-\input{ap-huraian}
-\input{ap-perisian}
+\input{../../supplements/app-details}
+\input{../../supplements/app-code}
+
 \end{document}
